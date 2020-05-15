@@ -65,10 +65,10 @@ function vote_result(){
         // преобразуем полученную строку от сервера в json объект
         let result = JSON.parse(message.data)
         vote_cat.style = "width:"+((result['cats']*100)/(result['cats']+result['dogs']+result['parrots'])).toFixed(2)+"%"
-        vote_cat.textContent = `${((result['cats']*100)/(result['cats']+result['dogs']+result['parrots'])).toFixed(2)}%`
+        vote_cat.textContent = `Cats: ${((result['cats']*100)/(result['cats']+result['dogs']+result['parrots'])).toFixed(2)}%`
         vote_dog.style = "width:"+((result['dogs']*100)/(result['cats']+result['dogs']+result['parrots'])).toFixed(2)+"%"
-        vote_dog.textContent = `${((result['dogs']*100)/(result['cats']+result['dogs']+result['parrots'])).toFixed(2)}%`
+        vote_dog.textContent = `Dogs: ${((result['dogs']*100)/(result['cats']+result['dogs']+result['parrots'])).toFixed(2)}%`
         vote_parrot.style = "width:"+((result['parrots']*100)/(result['cats']+result['dogs']+result['parrots'])).toFixed(2)+"%"
-        vote_parrot.textContent = `${((result['parrots']*100)/(result['cats']+result['dogs']+result['parrots'])).toFixed(2)}%`
+        vote_parrot.textContent = `Parrots: ${((result['parrots']*100)/(result['cats']+result['dogs']+result['parrots'])).toFixed(2)}%`
     }
 }
